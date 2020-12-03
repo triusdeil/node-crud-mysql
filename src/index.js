@@ -22,7 +22,10 @@ app.use(myConnection(mysql, {
     port: 3306,
     database:'nodemysql',
 },'single'));
-
+//routes
+app.use('/', customerRoutes);
+//static files
+app.use(express.static(path.join(__dirname,'public')));
 //server
 app.listen(app.get('port'), () =>{
     console.log(`server on port ${app.get('port')}`);
