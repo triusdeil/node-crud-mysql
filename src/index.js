@@ -24,6 +24,8 @@ app.use(myConnection(mysql, {
     database:'nodemysql',
 },'single'));
 
+//nos permite entender los datos que nos envien desde el formulario
+app.use(express.urlencoded({extended: false}));
 //routes
 app.use('/', customerRoutes);
 
