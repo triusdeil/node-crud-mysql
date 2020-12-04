@@ -19,9 +19,13 @@ controller.save = (req,res) =>{
         const data = req.body
         conn.query('INSERT INTO customer set ?',[data], (err, customer)=>{
             console.log(customer)
-            res.send('works')
+            res.redirect('/')
         })
     })
+}
+
+controller.delete = (req,res) =>{
+    //ya no usaremos body porque ya no esta enviando datos
 }
 
 module.exports = controller;
