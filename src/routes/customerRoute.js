@@ -4,5 +4,6 @@ const customerController = require('../controllers/customerController')
 
 router.get('/',customerController.list)
 router.post('/add',customerController.save)
-router.get('/delete',customerController.delete)
+//:id parametro de la ruta
+router.get('/delete/:id',customerController.delete)
 module.exports = router;
